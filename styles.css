@@ -1,1 +1,58 @@
 /*Maak hier jouw CSS!*/
+.container{
+    display: grid;
+    background-color: hsl(6, 72%, 89%);
+    row-gap: 16px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10px;
+    grit-template-areas:
+            "header"
+            "content
+            "aside-large"
+            "aside-medium"
+            "aside-small"
+            "footer"
+            "aside-dynamic"
+}
+
+.item {
+    background-color: hsl(289, 13%, 42%);
+    border: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item-a{
+    grid-area: header;
+}
+
+#item-b{
+    grid-are: content;
+}
+
+#item-c {
+    grid-are: aside-large;
+}
+
+#item-d {
+    grid-are: aside-medium;
+}
+
+#item-e {
+    grid-are: aside-small;
+}
+
+#item-f{
+    grid-are: footer;
+}
+
+#item-g {
+    grid-are: aside-dynamic;
+}
+
+
+
+
+
