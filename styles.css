@@ -1,58 +1,76 @@
 /*Maak hier jouw CSS!*/
-.container{
+
+.container {
+    /* Styling voor mobiel*/
     display: grid;
-    background-color: hsl(6, 72%, 89%);
+    background-color: hsl(33, 90%, 92%);
     row-gap: 16px;
+    column-gap: 16px;
     grid-template-columns: 1fr;
-    grid-template-rows: 10px;
-    grit-template-areas:
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    grid-template-areas:
             "header"
-            "content
+            "content"
             "aside-large"
-            "aside-medium"
             "aside-small"
-            "footer"
-            "aside-dynamic"
+            "aside-medium"
+            "."
+            "footer";
 }
 
+
 .item {
-    background-color: hsl(289, 13%, 42%);
-    border: 10px;
-    color: white;
+    background-color: hsl(355, 52%, 48%);
+    border: 2px hsl(355, 52%, 43%);
+    color: hsl(0, 0%, 100%);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#item-a{
+#item-a {
     grid-area: header;
 }
 
-#item-b{
-    grid-are: content;
+#item-b {
+    grid-area: content;
 }
 
 #item-c {
-    grid-are: aside-large;
+    grid-area: aside-large;
 }
 
 #item-d {
-    grid-are: aside-medium;
+    grid-area: aside-small;
 }
 
 #item-e {
-    grid-are: aside-small;
+    grid-area: aside-medium;
 }
 
-#item-f{
-    grid-are: footer;
-}
-
-#item-g {
-    grid-are: aside-dynamic;
+#item-f {
+    grid-area: footer;
 }
 
 
+@media screen and (min-width: 576px) {
+    /* styling alles groter dan mobiel*/
+    .container {
+        display: grid;
+        background-color: hsl(33, 90%, 92%);
+        row-gap: 16px;
+        column-gap: 16px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas:
+            "header aside-large aside-large"
+            "content aside-large aside-large"
+            "content aside-medium aside-small"
+            "content aside-medium ."
+            "footer footer footer";
+    }
+
+}
 
 
 
