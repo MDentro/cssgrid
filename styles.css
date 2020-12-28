@@ -1,13 +1,19 @@
 /*Maak hier jouw CSS!*/
+* {
+    margin: 0;
+    padding: 0;
+}
 
 .container {
     /* Styling voor mobiel*/
+    padding: 20px;
     display: grid;
-    background-color: hsl(33, 90%, 92%);
+    background-color: hsl(32, 100%, 93%);
     row-gap: 16px;
     column-gap: 16px;
+
     grid-template-columns: 1fr;
-    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    grid-template-rows: 50px auto repeat(5, 50px);
     grid-template-areas:
             "header"
             "content"
@@ -21,11 +27,12 @@
 
 .item {
     background-color: hsl(355, 52%, 48%);
-    border: 2px hsl(355, 52%, 43%);
+    border: 2px solid hsl(355, 52%, 38%);
     color: hsl(0, 0%, 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 16px;
 }
 
 #item-a {
@@ -56,11 +63,7 @@
 @media screen and (min-width: 576px) {
     /* styling alles groter dan mobiel*/
     .container {
-        display: grid;
-        background-color: hsl(33, 90%, 92%);
-        row-gap: 16px;
-        column-gap: 16px;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 50px 190px 100px auto 50px;
         grid-template-areas:
             "header aside-large aside-large"
